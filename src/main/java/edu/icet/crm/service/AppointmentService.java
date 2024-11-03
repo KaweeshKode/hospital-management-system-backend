@@ -12,5 +12,11 @@ public interface AppointmentService {
 
     List<Appointment> getAppointment();
 
-    List<Appointment> findByPatientId(Integer patientId);
+    Appointment findById(Integer id);
+
+    List<Appointment> findByType(String type);
+
+    List<Appointment> findByPatientId(Integer id);
+
+    List<Appointment> findByAdminId(Integer id);
 }

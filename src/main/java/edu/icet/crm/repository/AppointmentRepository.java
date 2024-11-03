@@ -7,5 +7,9 @@ import java.util.List;
 
 public interface AppointmentRepository extends JpaRepository<AppointmentEntity, Integer> {
 
+    Iterable<Object> findByType(String type);
+
     List<AppointmentEntity> findByPatientId(Integer patientId);
+
+    Iterable<Object> findByAdminId(Integer id);
 }

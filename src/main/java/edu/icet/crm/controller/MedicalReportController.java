@@ -19,11 +19,10 @@ public class MedicalReportController {
         service.addMedicalReport(medicalReport);
     }
 
-//    @GetMapping("/all-reports")
-//    public List<MedicalReport> getMedicalReports() {
-//        return service.getMedica
-//        lReports();
-//    }
+    @GetMapping("/all-reports")
+    public List<MedicalReport> getMedicalReports() {
+        return service.getMedicalReports();
+    }
 
     @DeleteMapping("/delete-report/{id}")
     public Boolean deleteMedicalReport(@PathVariable Integer id) {

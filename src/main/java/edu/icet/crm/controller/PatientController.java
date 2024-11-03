@@ -57,4 +57,14 @@ public class PatientController {
     public List<Patient> searchByContact(@PathVariable String contact) {
         return service.findByContact(contact);
     }
+
+    @GetMapping("/search-by-category/{category}")
+    public List<Patient> searchByCategory(@PathVariable String category) {
+        return service.searchByCategory(category);
+    }
+
+    @GetMapping("/search-by-blood-group/{bloodGroup}")
+    public List<Patient> searchByBloodGroup(@PathVariable String bloodGroup) {
+        return service.searchByBloodGroup(bloodGroup);
+    }
 }

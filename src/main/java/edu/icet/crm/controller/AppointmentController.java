@@ -39,10 +39,24 @@ public class AppointmentController {
         return service.getAppointment();
     }
 
-    @GetMapping("/search-by-patientId/{patientId}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Appointment> searchByPatientId(@PathVariable Integer patientId) {
-        return service.findByPatientId(patientId);
+    @GetMapping("/search-by-id/{id}")
+    public Appointment searchById(@PathVariable Integer id){
+        return service.findById(id);
     }
 
+    @GetMapping("/search-by-type/{type}")
+    public List<Appointment> searchByType(@PathVariable String type){
+        return service.findByType(type);
+    }
+
+    @GetMapping("/search-by-patient-id/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Appointment> searchByPatientId(@PathVariable Integer id) {
+        return service.findByPatientId(id);
+    }
+
+    @GetMapping("/search-by-admin-id/{id}")
+    public List<Appointment> searchByAdminId(@PathVariable Integer id){
+        return service.findByAdminId(id);
+    }
 }

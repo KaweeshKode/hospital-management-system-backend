@@ -13,4 +13,8 @@ public interface PatientRepository extends JpaRepository<PatientEntity, Integer>
     List<PatientEntity> findByNic(String nic);
 
     List<PatientEntity> findByContact(String contact);
+
+    Iterable<Object> findByCategory(String category);
+
+    Iterable<Object> findByBloodGroup(String bloodGroup);
 }

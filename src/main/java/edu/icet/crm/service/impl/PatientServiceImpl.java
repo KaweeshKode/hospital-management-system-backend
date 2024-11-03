@@ -64,4 +64,22 @@ public class PatientServiceImpl implements PatientService {
         return patientList;
     }
 
+    @Override
+    public List<Patient> searchByCategory(String category) {
+        List<Patient> patients = new ArrayList<>();
+        repository.findByCategory(category).forEach(entity->{
+            patients.add(mapper.map(entity, Patient.class));
+        });
+        return patients;
+    }
+
+    @Override
+    public List<Patient> searchByBloodGroup(String bloodGroup) {
+        List<Patient> patients = new ArrayList<>();
+        repository.findByBloodGroup(bloodGroup).forEach(entity->{
+            patients.add(mapper.map(entity, Patient.class));
+        });
+        return patients;
+    }
+
 }

@@ -18,4 +18,8 @@ public interface PatientService {
     List<Patient> findByNic(String nic);
 
     List<Patient> findByContact(String contact);
+
+    List<Patient> searchByCategory(String category);
+
+    List<Patient> searchByBloodGroup(String bloodGroup);
 }
